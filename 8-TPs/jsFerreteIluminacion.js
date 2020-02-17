@@ -9,46 +9,100 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
 
  */
 function CalcularPrecio() {
-    var lamparas;
-    var precio;
-    var marcas;
-    var valorlamparas;
-    var marcaargentina;
-    var marcafelipe;
-    var marcajeluz;
-    var marcahaz;
-    var marcaosram;
-    var descuento50;
-    var descuento40;
-    var descuento30;
+
+    // declarar variables //
+
+    var precioUnidad;
+    var cantidad;
+    var marca;
+    var precioBruto;
+    var precioNeto;
+    var porcentajeDescuento;
+    var mensaje;
+
+    //inicializar datos //
+
+    precioUnidad = 35;
+    cantidad = document.getElementById("Cantidad").value;
+    cantidad = parseInt(cantidad);
+    marca = document.getElementById("Marca").value;
+    precioBruto = cantidad * precioUnidad;
 
 
+    // Procesar datos //
 
-    lamparas = document.getElementById("Cantidad").value;
-    lamparas = parseInt(lamparas);
-    precio = 35;
-    document.getElementById("Marca").value = marcas;
-    valorlamparas = lamparas * precio;
-    descuento50 = 0.50;
-    descuento40 = 0.40;
-    descuento30 = 0.30; 
-
-    if (lamparas >= 6) {
-
-        preciocondescuento50 = ((valorlamparas) * descuento50);
-        document.getElementById("precioDescuento").value = preciocondescuento50;
-
+    if (cantidad >= 6) {
+        porcentajeDescuento = 0.5;
     }
-    else {
-        var preciosindescuento;
-        preciosindescuento = lamparas * precio;
-        document.getElementById("precioDescuento").value = preciosindescuento;
+    else if (cantidad == 5) {
+
+        if (marca == "ArgentinaLuz") {
+            porcentajeDescuento = 0.4;
+        }
+        else {
+            porcentajeDescuento = 0.3;
+        }
     }
 
-    switch (lamparas = 5) {
+    else if (cantidad == 4) {
+
+        if (marca == "ArgentinaLuz" || "FelipeLamparas") {
+            porcentajeDescuento = 0.4;
+
+        }
+        else {
+            porcentajeDescuento = 0.20;
+        }
+    }
+
+    switch (cantidad == 3) {
         case "ArgentinaLuz":
-            preciosindescuento40 = (valorlamparas * descuento40);
-            document.getElementById("precioDescuento").value = preciosindescuento40;
-        
+            porcentajeDescuento = 0.15;
+            break;
+        case "FelipeLampatas":
+            porcentajeDescuento = 0.10;
+            break;
+        default:
+            porcentajeDescuento = 0.5;
     }
+
+    //Punto E) Ingresos brutos //
+    
+    
+
+
+    precioNeto = precioBruto - (precioBruto * porcentajeDescuento);
+
+
+    mensaje = "El precio final es " + precioNeto;
+
+
+
+
+    // Mostrar resultados // 
+
+    document.getElementById("PrecioDescuento").value = precioNeto;
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
