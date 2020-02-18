@@ -5,7 +5,7 @@ function mostrar()
 	numero = 10
 
 	while (numero > 0) {
-		numero--;
+		numero --;
 		alert ("El numero es " + numero);
 	}
 

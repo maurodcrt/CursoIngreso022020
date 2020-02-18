@@ -3,7 +3,7 @@ function mostrar() {
 	numero = 0;
 
 	while (numero < 10) {
-		numero++;
+		numero ++;
 		alert ("El numero es " + numero);
 	}
 
