@@ -17,9 +17,13 @@ function mostrar()
 		contador ++;
 
 		respuesta = prompt ("¿Queres ingresar mas numeros? si/no ");
+
 		while (respuesta != "si" && respuesta != "no") {
-			prompt ("Solo adminite si o no, porfa no pongas otra cosa")
+			respuesta = prompt ("Solo adminite si o no, porfa no pongas otra cosa");
 		}
+		contador++;
+	 
+		while (respuesta == "s");
 		
 	}
 
